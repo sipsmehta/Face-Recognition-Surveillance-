@@ -27,7 +27,7 @@ class Ui_Dialog(QDialog):
         """
         Set the text of lineEdit once it's valid
         """
-        self.Videocapture_ = "0"
+        self.Videocapture_ = "1"
 
     @pyqtSlot()
     def runSlot(self):
