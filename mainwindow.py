@@ -1,10 +1,6 @@
-# Modified by Augmented Startups & Geeky Bee
-# October 2020
-# Facial Recognition Attendence GUI
-# Full Course - https://augmentedstartups.info/yolov4release
-# *-
 import sys
 from PyQt5.uic import loadUi
+from PyQt5.QtGui import QPixmap
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QDialog
@@ -16,9 +12,12 @@ from out_window import Ui_OutputDialog
 class Ui_Dialog(QDialog):
     def __init__(self):
         super(Ui_Dialog, self).__init__()
-        loadUi("mainwindow.ui", self)
+        loadUi("ui/mainwindow.ui", self)
 
         self.runButton.clicked.connect(self.runSlot)
+
+        self.logolabel.setPixmap(QPixmap("resources/logo.png"))
+        self.logolabel.setScaledContents(True)
 
         self._new_window = None
         self.Videocapture_ = None

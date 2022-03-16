@@ -14,7 +14,7 @@ import sys
 class Ui_OutputDialog(QDialog):
     def __init__(self):
         super(Ui_OutputDialog, self).__init__()
-        loadUi("./outputwindow.ui", self)
+        loadUi("ui/outputwindow.ui", self)
 
         now = QDate.currentDate()
         current_date = now.toString('ddd dd MMMM yyyy')
@@ -80,7 +80,7 @@ class Ui_OutputDialog(QDialog):
                     self.StatusLabel.setText('In Hostel')
                 else:
                     self.OrigImg.setPixmap(
-                        QPixmap("unknown.jpeg"))
+                        QPixmap("resources/unknown.jpeg"))
                     self.StatusLabel.setText('unknown')
 
                 self.OrigImg.setScaledContents(True)
