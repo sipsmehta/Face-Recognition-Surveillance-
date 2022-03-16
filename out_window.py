@@ -1,18 +1,14 @@
-# Modified by Augmented Startups & Geeky Bee
-# October 2020
-# Facial Recognition Attendence GUI
-# Full Course - https://augmentedstartups.info/yolov4release
-# *-
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import pyqtSlot, QTimer, QDate, Qt
-from PyQt5.QtWidgets import QDialog, QMessageBox
+from PyQt5.QtWidgets import QApplication, QDialog, QMessageBox, QPushButton
 import cv2
 import face_recognition
 import numpy as np
 import datetime
 import os
 import csv
+import sys
 
 
 class Ui_OutputDialog(QDialog):
@@ -20,12 +16,21 @@ class Ui_OutputDialog(QDialog):
         super(Ui_OutputDialog, self).__init__()
         loadUi("./outputwindow.ui", self)
 
-        # Update time
         now = QDate.currentDate()
         current_date = now.toString('ddd dd MMMM yyyy')
         current_time = datetime.datetime.now().strftime("%I:%M %p")
         self.Date_Label.setText(current_date)
         self.Time_Label.setText(current_time)
+
+        self.TimeList1 = []
+        self.TimeList2 = []
+
+        self.state = True
+
+        # self.ClockInButton.hide()
+        # self.ClockOutButton.hide()
+
+        # QPushButton.isVisible()
 
         self.image = None
 
@@ -39,32 +44,12 @@ class Ui_OutputDialog(QDialog):
             self.capture = cv2.VideoCapture(int(camera_name))
         else:
             self.capture = cv2.VideoCapture(camera_name)
-        self.timer = QTimer(self)  # Create Timer
-        # path = 'ImagesAttendance'
-        # if not os.path.exists(path):
-        #     os.mkdir(path)
-        # # known face encoding and known face name list
-        # images = []
-        # self.class_names = []
-        # self.encode_list = []
-        # self.TimeList1 = []
-        # self.TimeList2 = []
-        # attendance_list = os.listdir(path)
 
-        # # print(attendance_list)
-        # for cl in attendance_list:
-        #     cur_img = cv2.imread(f'{path}/{cl}')
-        #     images.append(cur_img)
-        #     self.class_names.append(os.path.splitext(cl)[0])
-        # for img in images:
-        #     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        #     boxes = face_recognition.face_locations(img)
-        #     encodes_cur_frame = face_recognition.face_encodings(img, boxes)[0]
-        #     # encode = face_recognition.face_encodings(img)[0]
-        #     self.encode_list.append(encodes_cur_frame)
-        # Connect timeout to the output function
         self.encode_list = np.load("img_metrix.npy")
         self.class_names = np.load("classes.npy")
+
+        self.timer = QTimer(self)  # Create Timer
+        # Connect timeout to the output function
         self.timer.timeout.connect(self.update_frame)
         self.timer.start(10)  # emit the timeout() signal at x=40ms
 
@@ -82,6 +67,30 @@ class Ui_OutputDialog(QDialog):
             :param name: detected face known or unknown one
             :return:
             """
+
+            if self.CheskFace.isChecked():
+
+                # if self.state:
+                self.NameLabel.setText(name)
+                # self.HoursLabel.setText('')
+                # self.MinLabel.setText('')
+                if name != "unknown":
+                    self.OrigImg.setPixmap(
+                        QPixmap(f"TrainingData/{name}.jpg"))
+                    self.StatusLabel.setText('In Hostel')
+                else:
+                    self.OrigImg.setPixmap(
+                        QPixmap("unknown.jpeg"))
+                    self.StatusLabel.setText('unknown')
+
+                self.OrigImg.setScaledContents(True)
+                self.state = False
+
+                self.CheskFace.setChecked(False)
+
+                # self.ClockInButton.show()
+                # self.ClockOutButton.show()
+
             if self.ClockInButton.isChecked():
                 self.ClockInButton.setEnabled(False)
                 with open('Attendance.csv', 'a') as f:
@@ -95,19 +104,20 @@ class Ui_OutputDialog(QDialog):
                                 f'\n{name},{date_time_string},Clock In')
                             self.ClockInButton.setChecked(False)
 
-                            self.NameLabel.setText(name)
+                            # self.NameLabel.setText(name)
                             self.StatusLabel.setText('Clocked In')
                             self.HoursLabel.setText('Measuring')
-                            self.MinLabel.setText('')
+                            # self.MinLabel.setText('')
+                            # self.OrigImg.setPixmap(
+                            #     QPixmap("TrainingData/Amulya Paritosh.jpg"))
+                            # self.OrigImg.setScaledContents(True)
 
-                            # self.CalculateElapse(name)
-                            #print('Yes clicked and detected')
                             self.Time1 = datetime.datetime.now()
-                            # print(self.Time1)
                             self.ClockInButton.setEnabled(True)
                         else:
                             print('Not clicked.')
                             self.ClockInButton.setEnabled(True)
+                            self.ClockInButton.setChecked(False)
             elif self.ClockOutButton.isChecked():
                 self.ClockOutButton.setEnabled(False)
                 with open('Attendance.csv', 'a') as f:
@@ -122,8 +132,8 @@ class Ui_OutputDialog(QDialog):
 
                             self.NameLabel.setText(name)
                             self.StatusLabel.setText('Clocked Out')
+
                             self.Time2 = datetime.datetime.now()
-                            # print(self.Time2)
 
                             self.ElapseList(name)
                             self.TimeList2.append(datetime.datetime.now())
@@ -135,9 +145,11 @@ class Ui_OutputDialog(QDialog):
                             self.HoursLabel.setText("{:.0f}".format(
                                 abs(self.ElapseHours.total_seconds() / 60**2)) + 'h')
                             self.ClockOutButton.setEnabled(True)
+
                         else:
                             print('Not clicked.')
                             self.ClockOutButton.setEnabled(True)
+                            self.ClockOutButton.setChecked(False)
 
         # face recognition
         faces_cur_frame = face_recognition.face_locations(frame)
@@ -156,10 +168,6 @@ class Ui_OutputDialog(QDialog):
                 name = class_names[best_match_index].upper()
                 y1, x2, y2, x1 = faceLoc
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                cv2.rectangle(frame, (x1, y2 - 20), (x2, y2),
-                              (0, 255, 0), cv2.FILLED)
-                cv2.putText(frame, name, (x1 + 6, y2 - 6),
-                            cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 255, 255), 1)
             mark_attendance(name)
 
         return frame
@@ -200,6 +208,7 @@ class Ui_OutputDialog(QDialog):
 
     def update_frame(self):
         ret, self.image = self.capture.read()
+        self.image = cv2.flip(self.image, 1)
         self.displayImage(self.image, self.encode_list, self.class_names, 1)
 
     def displayImage(self, image, encode_list, class_names, window=1):
@@ -228,3 +237,11 @@ class Ui_OutputDialog(QDialog):
         if window == 1:
             self.imgLabel.setPixmap(QPixmap.fromImage(outImage))
             self.imgLabel.setScaledContents(True)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    new_window = Ui_OutputDialog()
+    new_window.show()
+    new_window.startVideo("1")
+    sys.exit(app.exec_())

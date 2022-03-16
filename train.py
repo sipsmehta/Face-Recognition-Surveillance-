@@ -3,7 +3,7 @@ import face_recognition
 import cv2
 import numpy as np
 
-path = 'ImagesAttendance'
+path = 'TrainingData'
 if not os.path.exists(path):
     os.mkdir(path)
 # known face encoding and known face name list
