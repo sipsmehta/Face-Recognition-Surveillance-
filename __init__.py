@@ -10,3 +10,6 @@ import datetime
 import os
 import csv
 import sys
+
+guard_ui = "ui/guard.ui"
+main_ui = "ui/login.ui"
