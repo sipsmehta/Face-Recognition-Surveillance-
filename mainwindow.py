@@ -1,12 +1,5 @@
-import sys
-from PyQt5.uic import loadUi
-from PyQt5.QtGui import QPixmap
-from PyQt5 import QtWidgets
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import QApplication, QDialog
-import resource
-# from model import Model
-from out_window import Ui_OutputDialog
+from __init__ import *
+from guard_view import Ui_GuardDialog
 
 
 class Ui_Dialog(QDialog):
@@ -43,7 +36,7 @@ class Ui_Dialog(QDialog):
         """
         Created new window for vidual output of the video in GUI
         """
-        self._new_window = Ui_OutputDialog()
+        self._new_window = Ui_GuardDialog()
         self._new_window.show()
         self._new_window.startVideo(self.Videocapture_)
         print("Video Played")
