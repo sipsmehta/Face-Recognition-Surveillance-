@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <widget class="QDialog" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>858</width>
-    <height>594</height>
+    <height>664</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>848</width>
+     <height>666</height>
+    </rect>
+   </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <widget class="QLabel" name="label_3">
@@ -53,7 +61,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="tabBarAutoHide">
        <bool>true</bool>
@@ -127,25 +135,6 @@
           </property>
          </widget>
         </item>
-        <item row="0" column="2" colspan="3">
-         <widget class="KComboBox" name="kcombobox">
-          <item>
-           <property name="text">
-            <string>Dayout Pass</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NigntoutPass</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Leave Pass</string>
-           </property>
-          </item>
-         </widget>
-        </item>
         <item row="1" column="0" rowspan="2" colspan="2">
          <widget class="QLabel" name="label_2">
           <property name="enabled">
@@ -200,6 +189,25 @@
           </property>
          </widget>
         </item>
+        <item row="0" column="3" colspan="2">
+         <widget class="QComboBox" name="LoginType">
+          <item>
+           <property name="text">
+            <string>Dayout Pass</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Leave Pass</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nightout Pass</string>
+           </property>
+          </item>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_3">
@@ -237,13 +245,6 @@
    </layout>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

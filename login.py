@@ -1,5 +1,6 @@
 from __init__ import *
 from guard_view import Ui_GuardDialog
+from student_view import Ui_StudentDialog
 
 
 class Ui_Dialog(QDialog):
@@ -30,14 +31,21 @@ class Ui_Dialog(QDialog):
         self.refreshAll()
         print(self.Videocapture)
         ui.hide()
-        self.outputWindow_()
+        if self.LoginType.currentText() == "Guard Login":
+            self.guard_view()
 
-    def outputWindow_(self):
+        if self.LoginType.currentText() == "Student Login":
+            self.student_view()
+
+    def guard_view(self):
 
         self.new_window = Ui_GuardDialog()
         self.new_window.show()
         self.new_window.startVideo(self.Videocapture)
-        print("Video Played")
+
+    def student_view(self):
+        self.new_window = Ui_StudentDialog()
+        self.new_window.show()
 
 
 if __name__ == "__main__":
