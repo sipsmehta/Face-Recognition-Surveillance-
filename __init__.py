@@ -14,3 +14,5 @@ import sys
 guard_ui = "ui/guard.ui"
 main_ui = "ui/login.ui"
 student_ui = "ui/student_view.ui"
+
+camera = "1"

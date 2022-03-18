@@ -1,6 +1,6 @@
 from __init__ import *
-from guard_view import Ui_GuardDialog
-from student_view import Ui_StudentDialog
+from main.guard_view import Ui_GuardDialog
+from main.student_view import Ui_StudentDialog
 
 
 class Ui_Dialog(QDialog):
@@ -14,23 +14,13 @@ class Ui_Dialog(QDialog):
         self.Logo.setScaledContents(True)
 
         self.new_window = None
-        self.Videocapture = None
-
-    def refreshAll(self):
-        """
-        Set the text of lineEdit once it's valid
-        """
-        self.Videocapture = "1"
+        self.Videocapture = camera
 
     @pyqtSlot()
     def runSlot(self):
-        """
-        Called when the user presses the Run button
-        """
-        print("Clicked Run")
-        self.refreshAll()
+
         print(self.Videocapture)
-        ui.hide()
+        self.hide()
         if self.LoginType.currentText() == "Guard Login":
             self.guard_view()
 
@@ -40,8 +30,8 @@ class Ui_Dialog(QDialog):
     def guard_view(self):
 
         self.new_window = Ui_GuardDialog()
-        self.new_window.show()
         self.new_window.startVideo(self.Videocapture)
+        self.new_window.show()
 
     def student_view(self):
         self.new_window = Ui_StudentDialog()
