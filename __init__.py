@@ -6,10 +6,13 @@ from PyQt5.QtWidgets import QApplication, QDialog, QMessageBox, QPushButton
 import cv2
 import face_recognition
 import numpy as np
-import datetime
 import os
 import csv
 import sys
+import datetime as dt
+from PIL import Image
+
+format = '%Y-%m-%d %H:%M'
 
 guard_ui = "ui/guard.ui"
 main_ui = "ui/login.ui"

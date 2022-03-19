@@ -10,7 +10,7 @@ class Ui_GuardDialog(QDialog):
         self.Clock.clicked.connect(self.clock_student)
 
         self.student_current_status = "unknown"
-        self.name = "unknown"
+        self.uid = "unknown"
 
         self.image = None
 
@@ -25,8 +25,8 @@ class Ui_GuardDialog(QDialog):
         else:
             self.capture = cv2.VideoCapture(camera_name)
 
-        self.encode_list = np.load("img_metrix.npy")
-        self.class_names = np.load("classes.npy")
+        self.encode_list = np.load("main/img_metrix.npy")
+        self.class_names = np.load("main/classes.npy")
 
         self.timer = QTimer(self)
 
@@ -35,33 +35,33 @@ class Ui_GuardDialog(QDialog):
 
     def clock_student(self):
 
-        now = datetime.datetime.now()
+        now = dt.datetime.now()
 
         if self.student_current_status != "Out...":
 
             self.CheckoutTime.setText(
-                datetime.datetime.strftime(now, "%I:%M %p"))
+                dt.datetime.strftime(now, "%I:%M %p"))
             self.CheckoutDate.setText(
-                datetime.datetime.strftime(now, "%d/%m/%Y"))
+                dt.datetime.strftime(now, "%d/%m/%Y"))
 
             self.student_current_status = "Out..."
 
         elif self.student_current_status == "Out...":
 
             self.CheckinTime.setText(
-                datetime.datetime.strftime(now, "%I:%M %p"))
+                dt.datetime.strftime(now, "%I:%M %p"))
             self.CheckinDate.setText(
-                datetime.datetime.strftime(now, "%d/%m/%Y"))
+                dt.datetime.strftime(now, "%d/%m/%Y"))
 
             self.student_current_status = "In Hostel"
 
     def show_detected_face_data(self):
 
-        self.Name.setText(self.name)
+        self.UID.setText(self.uid)
 
-        if self.name != "unknown":
+        if self.uid != "unknown":
             self.ProfileImage.setPixmap(
-                QPixmap(f"TrainingData/{self.name}.jpg"))
+                QPixmap(f"TrainingData/{self.uid}.jpg"))
             self.Status.setText('In Hostel')
         else:
             self.ProfileImage.setPixmap(
@@ -80,11 +80,11 @@ class Ui_GuardDialog(QDialog):
                 encode_list_known, encodeFace, tolerance=0.50)
             face_dis = face_recognition.face_distance(
                 encode_list_known, encodeFace)
-            self.name = "unknown"
+            self.uid = "unknown"
             best_match_index = np.argmin(face_dis)
             # print("s",best_match_index)
             if match[best_match_index]:
-                self.name = class_names[best_match_index].upper()
+                self.uid = class_names[best_match_index].upper()
                 y1, x2, y2, x1 = faceLoc
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
