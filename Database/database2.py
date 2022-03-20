@@ -14,12 +14,12 @@ mc=cn.cursor()
 
 '''Student details table creating function'''
 def createdetailtbl():
-    qry="CREATE TABLE IF NOT EXISTS student_details(UID varchar(40) PRIMARY KEY UNIQUE,Name varchar(60),Branch varchar(20),Hostel_name Varchar(20),Room_no int,Mobile varchar(14),Father_Name char(60),Father_Mobile varchar(14))"
+    qry="CREATE TABLE IF NOT EXISTS student_details(UID varchar(40) PRIMARY KEY UNIQUE,Name varchar(60),Branch varchar(20),Hostel_name Varchar(20),Room_no int,Mobile varchar(14),Father_Name char(60),Father_Mobile varchar(14),Student_Status VARCHAR(20))"
     mc.execute(qry)
 
 '''Main Log Table'''
 def logintbl():
-    qry="CREATE TABLE IF NOT EXISTS global_log(PID bigint auto_increment PRIMARY KEY,UID varchar(40),Name char(60),Place_of_visit VARCHAR(50),Checkin_time DATETIME,Checkout_time DATETIME,Permit_time DATETIME,Branch varchar(20))"
+    qry="CREATE TABLE IF NOT EXISTS global_log(PID bigint auto_increment PRIMARY KEY,UID varchar(40),Name char(60),Place_of_visit VARCHAR(50),Checkin_time DATETIME,Checkout_time DATETIME,Permit_time DATETIME,Branch varchar(20),Pass_Type VARCHAR(20),Pass_Status VARCHAR(20))"
     mc.execute(qry)
 
 ''' Creating Student Individual tables'''
@@ -47,6 +47,8 @@ def checkout(uid,pid,checkout):
     cn.commit()
     mc.execute("UPDATE {} SET checkout_time='{}' where pid={}".format(uid,checkout,pid))
     cn.commit()
+    mc.execute("UPDATE student_details SET student_status='{}' WHERE uid='{}'".format("Outside",uid))
+    cn.commit()
 
 
 def checkin(uid,pid,checkin):
@@ -55,13 +57,26 @@ def checkin(uid,pid,checkin):
     cn.commit()
     mc.execute("UPDATE {} SET checkin_time='{}' where pid={}".format(uid,checkin,pid))
     cn.commit()
+    mc.execute("UPDATE student_details SET student_status='{}' WHERE uid='{}'".format("Inside",uid))
+    cn.commit()
+
+def getdetails(uid):
+    mc.execute('SELECT name,Student_status,Branch from student_details where uid="{}"'.format(uid))
+    a=mc.fetchall()[0]
+    mc.execute('SELECT pass_type,checkout_time,checkin_time from global_log where uid="{}"'.format(uid))
+    return a+mc.fetchall()[-1]
 
 
 
-createdetailtbl()
-logintbl()
-New_Student("21BCS2324","Shivam Kumar","CSE","7017908137","Shubham Kumar","9836473647")
-pass_creation(1,"21BCS2324","Shivam Kumar","Kharar","2022-11-11 11:11:11","CSE")
-checkout("21BCS2324",1,'2022-11-11 09:11:11')
-checkin("21BCS2324",1,'2022-11-11 10:11:11')
-New_Student("21BCS2952","Sarthak Puri","CSE","8284829383","Pramod Puri","8383938293","Zakir-A",903)
+if __name__=="__main__":
+    pid=1
+    
+    # createdetailtbl()
+    # logintbl()
+    # New_Student("21BCS2324","Shivam Kumar","CSE","7017908137","Shubham Kumar","9836473647")
+    # pass_creation(1,"21BCS2324","Shivam Kumar","Kharar","2022-11-11 11:11:11","CSE")
+    # checkout("21BCS2324",1,'2022-11-11 09:11:11')
+    # checkin("21BCS2324",1,'2022-11-11 10:11:11')
+    # New_Student("21BCS2952","Sarthak Puri","CSE","8284829383","Pramod Puri","8383938293","Zakir-A",903)
+    a=getdetails("21BCS2324")
+    print(a)
