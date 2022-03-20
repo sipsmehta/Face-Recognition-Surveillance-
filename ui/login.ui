@@ -60,9 +60,9 @@
     <property name="geometry">
      <rect>
       <x>55</x>
-      <y>420</y>
+      <y>400</y>
       <width>301</width>
-      <height>150</height>
+      <height>170</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -70,6 +70,7 @@
       <widget class="QComboBox" name="LoginType">
        <property name="font">
         <font>
+         <pointsize>12</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -93,6 +94,11 @@
      </item>
      <item>
       <widget class="QLineEdit" name="Username">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Username</string>
        </property>
@@ -100,6 +106,11 @@
      </item>
      <item>
       <widget class="QLineEdit" name="Password">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Password</string>
        </property>
@@ -107,8 +118,13 @@
      </item>
      <item>
       <widget class="QPushButton" name="Login">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>LOGIN</string>
        </property>
       </widget>
      </item>

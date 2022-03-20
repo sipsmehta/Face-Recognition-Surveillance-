@@ -6,324 +6,911 @@
             <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>796</width>
-                <height>600</height>
+                <width>846</width>
+                <height>654</height>
             </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>846</width>
+                <height>654</height>
+            </size>
         </property>
         <property name="windowTitle">
             <string>MainWindow</string>
         </property>
-        <widget class="QWidget" name="centralwidget">
-            <widget class="QFrame" name="frame">
+        <widget class="QScrollArea" name="scrollArea">
+            <property name="geometry">
+                <rect>
+                    <x>4</x>
+                    <y>66</y>
+                    <width>836</width>
+                    <height>581</height>
+                </rect>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="minimumSize">
+                <size>
+                    <width>0</width>
+                    <height>100</height>
+                </size>
+            </property>
+            <property name="verticalScrollBarPolicy">
+                <enum>Qt::ScrollBarAlwaysOn</enum>
+            </property>
+            <property name="widgetResizable">
+                <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
                 <property name="geometry">
                     <rect>
-                        <x>15</x>
-                        <y>220</y>
-                        <width>766</width>
-                        <height>151</height>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>811</width>
+                        <height>854</height>
                     </rect>
                 </property>
-                <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                </property>
-                <widget class="QWidget" name="gridLayoutWidget">
-                    <property name="geometry">
-                        <rect>
-                            <x>4</x>
-                            <y>4</y>
-                            <width>761</width>
-                            <height>141</height>
-                        </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout">
-                        <item row="0" column="0" rowspan="2">
-                            <widget class="QLabel" name="profile_img">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="1">
-                            <widget class="QLabel" name="label_3">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="3">
-                            <widget class="QLabel" name="label_4">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="2">
-                            <widget class="QLabel" name="label_2">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="4">
-                            <widget class="QLabel" name="label_5">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="1" colspan="2">
-                            <widget class="QPushButton" name="pushButton_2">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="3" colspan="2">
-                            <widget class="QPushButton" name="pushButton">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                    </layout>
-                </widget>
-            </widget>
-            <widget class="QFrame" name="frame_2">
-                <property name="geometry">
-                    <rect>
-                        <x>15</x>
-                        <y>380</y>
-                        <width>766</width>
-                        <height>151</height>
-                    </rect>
-                </property>
-                <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                </property>
-                <widget class="QWidget" name="gridLayoutWidget_2">
-                    <property name="geometry">
-                        <rect>
-                            <x>4</x>
-                            <y>4</y>
-                            <width>761</width>
-                            <height>141</height>
-                        </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_2">
-                        <item row="0" column="0" rowspan="2">
-                            <widget class="QLabel" name="profile_img_2">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="1">
-                            <widget class="QLabel" name="label_6">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="3">
-                            <widget class="QLabel" name="label_7">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="2">
-                            <widget class="QLabel" name="label_8">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="4">
-                            <widget class="QLabel" name="label_9">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="1" colspan="2">
-                            <widget class="QPushButton" name="pushButton_3">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="3" colspan="2">
-                            <widget class="QPushButton" name="pushButton_4">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                    </layout>
-                </widget>
-            </widget>
-            <widget class="QFrame" name="frame_3">
-                <property name="geometry">
-                    <rect>
-                        <x>15</x>
-                        <y>60</y>
-                        <width>766</width>
-                        <height>151</height>
-                    </rect>
-                </property>
-                <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                </property>
-                <widget class="QWidget" name="gridLayoutWidget_4">
-                    <property name="geometry">
-                        <rect>
-                            <x>4</x>
-                            <y>4</y>
-                            <width>761</width>
-                            <height>141</height>
-                        </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_4">
-                        <item row="0" column="0" rowspan="2">
-                            <widget class="QLabel" name="profile_img_4">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="1">
-                            <widget class="QLabel" name="label_14">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="3">
-                            <widget class="QLabel" name="label_15">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="2">
-                            <widget class="QLabel" name="label_16">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="4">
-                            <widget class="QLabel" name="label_17">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="1" colspan="2">
-                            <widget class="QPushButton" name="pushButton_7">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="3" colspan="2">
-                            <widget class="QPushButton" name="pushButton_8">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                    </layout>
-                </widget>
-            </widget>
-            <widget class="QFrame" name="frame_4">
-                <property name="geometry">
-                    <rect>
-                        <x>15</x>
-                        <y>540</y>
-                        <width>766</width>
-                        <height>151</height>
-                    </rect>
-                </property>
-                <property name="frameShape">
-                    <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
-                </property>
-                <widget class="QWidget" name="gridLayoutWidget_8">
-                    <property name="geometry">
-                        <rect>
-                            <x>4</x>
-                            <y>4</y>
-                            <width>761</width>
-                            <height>141</height>
-                        </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_8">
-                        <item row="0" column="0" rowspan="2">
-                            <widget class="QLabel" name="profile_img_8">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="1">
-                            <widget class="QLabel" name="label_30">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="3">
-                            <widget class="QLabel" name="label_31">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="2">
-                            <widget class="QLabel" name="label_32">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="0" column="4">
-                            <widget class="QLabel" name="label_33">
-                                <property name="text">
-                                    <string>TextLabel</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="1" colspan="2">
-                            <widget class="QPushButton" name="pushButton_15">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                        <item row="1" column="3" colspan="2">
-                            <widget class="QPushButton" name="pushButton_16">
-                                <property name="text">
-                                    <string>PushButton</string>
-                                </property>
-                            </widget>
-                        </item>
-                    </layout>
-                </widget>
+                <layout class="QVBoxLayout" name="verticalLayout">
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_10">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_10">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_14">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_27">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_80">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_81">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_11">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_82">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_83">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_84">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_85">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_86">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_28">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_14">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_11">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_11">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_15">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_29">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_87">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_88">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_12">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_89">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_90">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_91">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_92">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_93">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_30">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_15">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_12">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_12">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_16">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_31">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_94">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_95">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_13">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_96">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_97">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_98">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_99">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_100">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_32">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_16">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_13">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_13">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_17">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_33">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_101">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_102">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_14">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_103">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_104">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_105">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_106">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_107">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_34">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_17">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_15">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_15">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_19">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_37">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_115">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_116">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_16">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_117">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_118">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_119">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_120">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_121">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_38">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_19">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_17">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_17">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_21">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_41">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_129">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_130">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_18">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_131">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_132">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_133">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_134">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_135">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_42">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_21">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_16">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_16">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_20">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_39">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_122">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_123">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_17">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_124">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_125">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_126">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_127">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_128">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_40">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_20">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QGroupBox" name="groupBox_14">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_14">
+                                <item>
+                                    <layout class="QGridLayout" name="gridLayout_18">
+                                        <item row="2" column="1" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_35">
+                                                <property name="autoFillBackground">
+                                                    <bool>false</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Accept</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="4">
+                                            <widget class="QLabel" name="label_108">
+                                                <property name="text">
+                                                    <string>Hostel &amp; room no: NC-5,678</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="3">
+                                            <widget class="QLabel" name="label_109">
+                                                <property name="text">
+                                                    <string>Out time:14:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="1">
+                                            <widget class="QLabel" name="label_15">
+                                                <property name="text">
+                                                    <string>Uid:21BCS1106</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="2">
+                                            <widget class="QLabel" name="label_110">
+                                                <property name="text">
+                                                    <string>Place of visit:Kharar</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="1">
+                                            <widget class="QLabel" name="label_111">
+                                                <property name="mouseTracking">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Name:Kartik Garg</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="4">
+                                            <widget class="QLabel" name="label_112">
+                                                <property name="text">
+                                                    <string>In time:16:00</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="2">
+                                            <widget class="QLabel" name="label_113">
+                                                <property name="enabled">
+                                                    <bool>true</bool>
+                                                </property>
+                                                <property name="text">
+                                                    <string>Date:18/03/2022</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="1" column="3">
+                                            <widget class="QLabel" name="label_114">
+                                                <property name="text">
+                                                    <string>Phone no:8978674535</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="2" column="3" colspan="2">
+                                            <widget class="QPushButton" name="pushButton_36">
+                                                <property name="text">
+                                                    <string>Decline</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                        <item row="0" column="0" rowspan="3">
+                                            <widget class="QLabel" name="profile_img_18">
+                                                <property name="text">
+                                                    <string>IMAGE</string>
+                                                </property>
+                                            </widget>
+                                        </item>
+                                    </layout>
+                                </item>
+                            </layout>
+                        </widget>
+                    </item>
+                </layout>
             </widget>
         </widget>
+        <widget class="QLabel" name="label">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>15</y>
+                    <width>826</width>
+                    <height>41</height>
+                </rect>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>18</pointsize>
+                </font>
+            </property>
+            <property name="text">
+                <string>Pending Passes</string>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignCenter</set>
+            </property>
+        </widget>
     </widget>
+    <customwidgets>
+        <customwidget>
+            <class>QDailog</class>
+            <extends>QWidget</extends>
+            <header>qdailog.h</header>
+            <container>1</container>
+        </customwidget>
+    </customwidgets>
     <resources />
     <connections />
 </ui>
