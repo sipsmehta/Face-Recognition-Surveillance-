@@ -1,6 +1,7 @@
 from __init__ import *
 from main.guard_view import Ui_GuardDialog
 from main.student_view import Ui_StudentDialog
+from main.warden_view import Ui_WardenDialog
 
 
 class Ui_Dialog(QDialog):
@@ -19,13 +20,15 @@ class Ui_Dialog(QDialog):
     @pyqtSlot()
     def runSlot(self):
 
-        print(self.Videocapture)
         self.hide()
         if self.LoginType.currentText() == "Guard Login":
             self.guard_view()
 
         if self.LoginType.currentText() == "Student Login":
             self.student_view()
+
+        if self.LoginType.currentText() == "Warden Login":
+            self.warden_view()
 
     def guard_view(self):
 
@@ -35,6 +38,10 @@ class Ui_Dialog(QDialog):
 
     def student_view(self):
         self.new_window = Ui_StudentDialog()
+        self.new_window.show()
+
+    def warden_view(self):
+        self.new_window = Ui_WardenDialog()
         self.new_window.show()
 
 

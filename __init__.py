@@ -3,7 +3,7 @@ from PyQt5.uic import loadUi
 from PyQt5.QtCore import pyqtSlot, QTimer, QDate, Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMessageBox, QPushButton
 
-from qt_material import apply_stylesheet
+# from qt_material import apply_stylesheet
 
 import cv2
 import face_recognition
@@ -19,5 +19,6 @@ format = '%Y-%m-%d %H:%M'
 guard_ui = "ui/guard.ui"
 main_ui = "ui/login.ui"
 student_ui = "ui/student_view.ui"
+warden_ui = "ui/warden_view.ui"
 
 camera = "1"
