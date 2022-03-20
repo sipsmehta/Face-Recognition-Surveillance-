@@ -95,7 +95,7 @@
          </widget>
         </item>
         <item row="10" column="2" colspan="2">
-         <widget class="QCalendarWidget" name="calendarWidget_2">
+         <widget class="QCalendarWidget" name="InDate">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -114,7 +114,7 @@
          </widget>
         </item>
         <item row="0" column="2" colspan="2">
-         <widget class="QComboBox" name="LoginType">
+         <widget class="QComboBox" name="PassType">
           <item>
            <property name="text">
             <string>Dayout Pass</string>
@@ -133,7 +133,7 @@
          </widget>
         </item>
         <item row="3" column="3">
-         <widget class="QTimeEdit" name="timeEdit_2"/>
+         <widget class="QTimeEdit" name="InTime"/>
         </item>
         <item row="11" column="0" colspan="2">
          <widget class="QPushButton" name="pushButton">
@@ -169,7 +169,7 @@
          </widget>
         </item>
         <item row="10" column="0" colspan="2">
-         <widget class="QCalendarWidget" name="calendarWidget">
+         <widget class="QCalendarWidget" name="OutDate">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -237,13 +237,13 @@
          </widget>
         </item>
         <item row="3" column="0" colspan="2">
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="PlaceOfVisit"/>
         </item>
         <item row="1" column="3">
-         <widget class="QTimeEdit" name="timeEdit"/>
+         <widget class="QTimeEdit" name="OutTime"/>
         </item>
         <item row="11" column="2" colspan="2">
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="ApplyPass">
           <property name="text">
            <string>Apply</string>
           </property>

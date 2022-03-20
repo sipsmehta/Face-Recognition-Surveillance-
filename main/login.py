@@ -37,7 +37,7 @@ class Ui_Dialog(QDialog):
         self.new_window.show()
 
     def student_view(self):
-        self.new_window = Ui_StudentDialog()
+        self.new_window = Ui_StudentDialog(self.Username.text())
         self.new_window.show()
 
     def warden_view(self):

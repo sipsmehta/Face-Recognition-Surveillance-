@@ -1,5 +1,5 @@
 from __init__ import *
-from Database import database2 as dsf
+from Database import databaseFunctions as dsf
 
 
 class Ui_GuardDialog(QDialog):
@@ -67,7 +67,6 @@ class Ui_GuardDialog(QDialog):
             self.student_current_status = "Inside"
 
             self.Clock.setText("Clock Out")
-
 
     def show_detected_face_data(self):
 
