@@ -33,7 +33,7 @@ def logintbl():
 
 
 def StudentPersonalTable(uid):
-    mc.execute("CREATE TABLE IF NOT EXISTS {}(PID bigint,Place_of_visit VARCHAR(50),Checkin_time DATETIME,Checkout_time DATETIME,Permit_time DATETIME)".format(uid))
+    mc.execute("CREATE TABLE IF NOT EXISTS {}(PID bigint PRIMARY KEY,Place_of_visit VARCHAR(50),Checkin_time DATETIME,Checkout_time DATETIME,Permit_time DATETIME)".format(uid))
     print("Table Structure Created Successfully")
 
 
@@ -100,23 +100,23 @@ if __name__ == "__main__":
     createdetailtbl()
     logintbl()
 
-    # New_Student("21BCS2324", "Shivam Kumar", "CSE",
-    #             "7017908137", "Shubham Kumar", "9836473647")
+    # # New_Student("21BCS2324", "Shivam Kumar", "CSE",
+    # #             "7017908137", "Shubham Kumar", "9836473647")
 
     _dt = dt.datetime.strptime("2022-11-11 11:11:11", format)
 
-    pass_creation(123, "21BCS2287",
-                  "Kharar", _dt)
+    # checkout("21BCS2324", _dt, 111)
 
-    # checkout("21BCS2324", 1, '2022-11-11 09:11:11')
-
-    # checkin("21BCS2324", 1, '2022-11-11 10:11:11')
+    # checkin("21BCS2324",  _dt, 111)
 
     # New_Student("21BCS2952", "Sarthak Puri", "CSE", "8284829383",
     #             "Pramod Puri", "8383938293", "Zakir-A", 903)
 
     # New_Student("21BCS2287", "Amulya Paritosh", "CSE", "999999999",
     #             "Father", "7777777777", "Zakir-A", 417)
+
+    pass_creation(125, "21BCS2287",
+                  "Kharar", _dt)
 
     a = getdetails("21BCS2287")
 

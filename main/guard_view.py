@@ -44,7 +44,7 @@ class Ui_GuardDialog(QDialog):
 
         if self.student_current_status != "Outside":
 
-            dsf.checkout(self.uid, now,124)
+            dsf.checkout(self.uid, now, 125)
 
             self.CheckoutTime.setText(
                 dt.datetime.strftime(now, "%I:%M %p"))
@@ -53,9 +53,11 @@ class Ui_GuardDialog(QDialog):
 
             self.student_current_status = "Outside"
 
+            self.Clock.setText("Clock In")
+
         elif self.student_current_status == "Outside":
 
-            dsf.checkin(self.uid, now,124)
+            dsf.checkin(self.uid, now, 125)
 
             self.CheckinTime.setText(
                 dt.datetime.strftime(now, "%I:%M %p"))
@@ -64,23 +66,25 @@ class Ui_GuardDialog(QDialog):
 
             self.student_current_status = "Inside"
 
+            self.Clock.setText("Clock Out")
+
+
     def show_detected_face_data(self):
 
-        (self.name, self.status, self.branch,
-            *self.check_details) = dsf.getdetails(self.uid)
+        try:
+            (self.name, self.status, self.branch,
+                *self.check_details) = dsf.getdetails(self.uid)
+        except Exception:
+            print("face not in dataset")
 
         self.UID.setText(self.uid)
         self.Name.setText(self.name)
         self.Status.setText(self.status)
         self.Branch.setText(self.branch)
 
-        print(self.check_details)
-        # print(dt.datetime.strftime(self.check_details[1]), format)
-
         if self.uid != "unknown":
             self.ProfileImage.setPixmap(
                 QPixmap(f"TrainingData/{self.uid}.jpg"))
-            # self.Status.setText('In Hostel')
         else:
             self.ProfileImage.setPixmap(
                 QPixmap("resources/unknown.jpeg"))
