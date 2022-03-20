@@ -1,4 +1,5 @@
 from __init__ import *
+from Database import database2 as dsf
 
 
 class Ui_GuardDialog(QDialog):
@@ -11,6 +12,10 @@ class Ui_GuardDialog(QDialog):
 
         self.student_current_status = "unknown"
         self.uid = "unknown"
+        self.name = "unknown"
+        self.status = "Inside"
+        self.branch = "unknown"
+        self.check_details = ()
 
         self.image = None
 
@@ -37,32 +42,49 @@ class Ui_GuardDialog(QDialog):
 
         now = dt.datetime.now()
 
-        if self.student_current_status != "Out...":
+        if self.student_current_status != "Outside":
+
+            dsf.checkout(self.uid, now, 125)
 
             self.CheckoutTime.setText(
                 dt.datetime.strftime(now, "%I:%M %p"))
             self.CheckoutDate.setText(
                 dt.datetime.strftime(now, "%d/%m/%Y"))
 
-            self.student_current_status = "Out..."
+            self.student_current_status = "Outside"
 
-        elif self.student_current_status == "Out...":
+            self.Clock.setText("Clock In")
+
+        elif self.student_current_status == "Outside":
+
+            dsf.checkin(self.uid, now, 125)
 
             self.CheckinTime.setText(
                 dt.datetime.strftime(now, "%I:%M %p"))
             self.CheckinDate.setText(
                 dt.datetime.strftime(now, "%d/%m/%Y"))
 
-            self.student_current_status = "In Hostel"
+            self.student_current_status = "Inside"
+
+            self.Clock.setText("Clock Out")
+
 
     def show_detected_face_data(self):
 
+        try:
+            (self.name, self.status, self.branch,
+                *self.check_details) = dsf.getdetails(self.uid)
+        except Exception:
+            print("face not in dataset")
+
         self.UID.setText(self.uid)
+        self.Name.setText(self.name)
+        self.Status.setText(self.status)
+        self.Branch.setText(self.branch)
 
         if self.uid != "unknown":
             self.ProfileImage.setPixmap(
                 QPixmap(f"TrainingData/{self.uid}.jpg"))
-            self.Status.setText('In Hostel')
         else:
             self.ProfileImage.setPixmap(
                 QPixmap("resources/unknown.jpeg"))
