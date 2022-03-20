@@ -66,7 +66,9 @@ def getdetails(uid):
     mc.execute('SELECT pass_type,checkout_time,checkin_time from global_log where uid="{}"'.format(uid))
     return a+mc.fetchall()[-1]
 
-
+def GetGlobalLog():
+    mc.execute('Select * from global_log')
+    return mc.fetchall()
 
 if __name__=="__main__":
     pid=1
@@ -79,4 +81,5 @@ if __name__=="__main__":
     # checkin("21BCS2324",1,'2022-11-11 10:11:11')
     # New_Student("21BCS2952","Sarthak Puri","CSE","8284829383","Pramod Puri","8383938293","Zakir-A",903)
     a=getdetails("21BCS2324")
-    print(a)
+    for i in GetGlobalLog():
+        print(i)
