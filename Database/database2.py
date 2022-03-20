@@ -46,9 +46,6 @@ def New_Student(uid, name, branch, mobile, father_name, father_mobile, hostel='N
 
 def pass_creation(pid, uid, place, permit):
     permit = dt.datetime.strftime(permit, format)
-    # mc.execute("INSERT INTO global_log(pid,uid,place_of_visit,permit_time,branch) VALUES ('{}','{}','{}','{}','{}')".format(
-    #     pid, uid, place, permit, branch))
-    # cn.commit()
     mc.execute("INSERT INTO {}(pid,place_of_visit,permit_time) VALUES ('{}','{}','{}')".format(
         uid, pid, place, permit))
     cn.commit()
