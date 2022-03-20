@@ -83,6 +83,15 @@ def getdetails(uid):
     a = mc.fetchall()[0]
     mc.execute(
         'SELECT pass_type,checkout_time,checkin_time from global_log where uid="{}"'.format(uid))
+<<<<<<< HEAD
+=======
+
+    try:
+        b = mc.fetchall()[-1]
+    except Exception:
+        b = ()
+    return a+b
+>>>>>>> 97a2ba97826c0b2b98ff775994fa160e931f087b
 
     try:
         b = mc.fetchall()[-1]
@@ -90,6 +99,26 @@ def getdetails(uid):
         b = ()
     return a+b
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+def GetGlobalLog():
+    mc.execute('Select * from global_log')
+    return mc.fetchall()
+
+if __name__=="__main__":
+    pid=1
+    
+    # createdetailtbl()
+    # logintbl()
+    # New_Student("21BCS2324","Shivam Kumar","CSE","7017908137","Shubham Kumar","9836473647")
+    # pass_creation(1,"21BCS2324","Shivam Kumar","Kharar","2022-11-11 11:11:11","CSE")
+    # checkout("21BCS2324",1,'2022-11-11 09:11:11')
+    # checkin("21BCS2324",1,'2022-11-11 10:11:11')
+    # New_Student("21BCS2952","Sarthak Puri","CSE","8284829383","Pramod Puri","8383938293","Zakir-A",903)
+    a=getdetails("21BCS2324")
+    for i in GetGlobalLog():
+        print(i)
+=======
 
 if __name__ == "__main__":
     pid = 1
@@ -117,4 +146,33 @@ if __name__ == "__main__":
 
     a = getdetails("21BCS2287")
 
+=======
+if __name__ == "__main__":
+    pid = 1
+
+    createdetailtbl()
+    logintbl()
+
+    # # New_Student("21BCS2324", "Shivam Kumar", "CSE",
+    # #             "7017908137", "Shubham Kumar", "9836473647")
+
+    _dt = dt.datetime.strptime("2022-11-11 11:11:11", format)
+
+    # checkout("21BCS2324", _dt, 111)
+
+    # checkin("21BCS2324",  _dt, 111)
+
+    # New_Student("21BCS2952", "Sarthak Puri", "CSE", "8284829383",
+    #             "Pramod Puri", "8383938293", "Zakir-A", 903)
+
+    # New_Student("21BCS2287", "Amulya Paritosh", "CSE", "999999999",
+    #             "Father", "7777777777", "Zakir-A", 417)
+
+    pass_creation(125, "21BCS2287",
+                  "Kharar", _dt)
+
+    a = getdetails("21BCS2287")
+
+>>>>>>> 97a2ba97826c0b2b98ff775994fa160e931f087b
     print(a)
+>>>>>>> 97a2ba97826c0b2b98ff775994fa160e931f087b
