@@ -12,8 +12,6 @@ class Ui_StudentDialog(QDialog):
 
         self.ApplyPass.clicked.connect(self.apply_pass)
 
-        self.details()
-
     def apply_pass(self):
 
         pass_type = self.PassType.currentText()
@@ -21,11 +19,13 @@ class Ui_StudentDialog(QDialog):
         out_time = QDateTime(self.OutDate.selectedDate(),
                              self.OutTime.time()).toPyDateTime()
 
-        createoutpass(self.UID, out_time, place, pass_type)
-        print(self.OutTime.time())
-        print(self.OutDate.selectedDate())
+        pid = createoutpass(self.UID, out_time, place, pass_type)
 
-        print()
+        dbf.pass_creation(pid, self.UID, place)
+        # print(self.OutTime.time())
+        # print(self.OutDate.selectedDate())
+
+        # print()
 
         pass
 

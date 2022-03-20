@@ -57,7 +57,11 @@ class __LeavePass__:
 
 
 class OutPass:
-    data = 2000
+
+    try:
+        data = int(os.listdir("passes")[-1][:-4])+1
+    except Exception:
+        data = 2000
 
     @staticmethod
     def incre():
@@ -67,7 +71,7 @@ class OutPass:
 
         self.UID = uid
 
-        self.name, self.hostel, self.room = self.details(self.UID)
+        self.name, self.hostel, self.room = self.details()
 
         self.place = _place
         self.out_time = dt.datetime.strftime(_out_time, format)
@@ -77,13 +81,13 @@ class OutPass:
 
         self.outpass = None
 
-        if pass_type == "dayout":
+        if pass_type == "Dayout Pass":
             self.outpass = __DayoutPass__(
                 self.name, self.out_time, self.place, self.hostel, self.room, self.UID)
-        elif pass_type == "nightout":
+        elif pass_type == "Nightout Pass":
             self.outpass = __NightoutPass__(
                 self.name, self.out_time, self.place, self.hostel, self.room, self.UID)
-        elif pass_type == "leave":
+        elif pass_type == "Leave Pass":
             self.outpass = __LeavePass__(
                 self.name, self.out_time, self.hostel, self.room, self.UID, self.place)
         else:
@@ -91,9 +95,8 @@ class OutPass:
 
     def details(self):
         mc.execute(
-            'SELECT name,uid,hostel_name,room_no from student_details where uid="{}"'.format(self.UID))
+            'SELECT name,hostel_name,room_no from student_details where uid="{}"'.format(self.UID))
         c = mc.fetchall()[0]
-        # print(c)
         return c
 
     def issue(self, ) -> None:
@@ -112,3 +115,5 @@ def createoutpass(uid, out_time, place, pass_type):
 
     with open(f'passes/{pass_obj.pid}.pkl', 'wb') as f:
         pickle.dump(pass_obj, f)
+
+    return pass_obj.pid

@@ -1,17 +1,6 @@
 import mysql.connector as sq
-from datetime import datetime as dt
-# from __init__ import *
-
-# format = '%Y-%m-%d %H:%M:%S'
-# '''Connecting to the database'''
-# # cn = sq.connect(username="admin", password="sih",host="localhost", database='sih_main')
-# cn = sq.connect(username="root", password="SIH",host="localhost", database='sih')
-# if cn.is_connected() == False:
-#     print("not connected")
-# else:
-#     print("Connection successful")
-# mc = cn.cursor()
-
+# from datetime import datetime as dt
+from __init__ import *
 
 '''Student details table creating function'''
 
@@ -44,15 +33,19 @@ def New_Student(uid, name, branch, mobile, father_name, father_mobile, hostel='N
     StudentPersonalTable(uid)
 
 
-def pass_creation(pid, uid, place, permit):
-    permit = dt.strptime(permit, format)
-    mc.execute("INSERT INTO {}(pid,place_of_visit,permit_time) VALUES ('{}','{}','{}')".format(
-        uid, pid, place, permit))
-    cn.commit()
+def pass_creation(pid, uid, place, permit="2022-11-11 15:11"):
+    permit = dt.datetime.strptime(permit, format)
+
+    try:
+        mc.execute("INSERT INTO {}(pid,place_of_visit,permit_time) VALUES ('{}','{}','{}')".format(
+            uid, pid, place, permit))
+        cn.commit()
+    except Exception:
+        print("pass already exists")
 
 
 def checkout(uid, checkout, pid=9999):
-    checkout = dt.strptime(checkout, format)
+    checkout = dt.datetime.strftime(checkout, format)
     mc.execute(
         'SELECT name,branch FROM student_details WHERE uid="{}"'.format(uid))
     data = mc.fetchall()[0]
@@ -71,7 +64,7 @@ def checkout(uid, checkout, pid=9999):
 
 
 def checkin(uid, checkin, pid=9999):
-    checkin = dt.strptime(checkin, format)
+    checkin = dt.datetime.strftime(checkin, format)
     mc.execute(
         "UPDATE global_log SET checkin_time='{}' WHERE pid={}".format(checkin, pid))
     cn.commit()
@@ -106,7 +99,7 @@ if __name__ == "__main__":
     # New_Student("21BCS2324", "Shivam Kumar", "CSE",
     #             "7017908137", "Shubham Kumar", "9836473647")
 
-    # # _dt = dt.datetime.strptime("2022-11-11 11:11:11", format)
+    # # _dt = dt.datetime.datetime.strptime("2022-11-11 11:11:11", format)
 
     # New_Student("21BCS2952", "Sarthak Puri", "CSE", "8284829383",
     #             "Pramod Puri", "8383938293", "Zakir-A", 903)
