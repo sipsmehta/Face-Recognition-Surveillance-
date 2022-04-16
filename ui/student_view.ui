@@ -236,9 +236,6 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="0" colspan="2">
-         <widget class="QLineEdit" name="PlaceOfVisit"/>
-        </item>
         <item row="1" column="3">
          <widget class="QTimeEdit" name="OutTime"/>
         </item>
@@ -248,6 +245,9 @@
            <string>Apply</string>
           </property>
          </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QLineEdit" name="PlaceOfVisit"/>
         </item>
        </layout>
       </widget>

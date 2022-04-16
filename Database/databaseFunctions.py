@@ -1,3 +1,4 @@
+from jinja2 import StrictUndefined
 import mysql.connector as sq
 # from datetime import datetime as dt
 from __init__ import *
@@ -41,7 +42,7 @@ def pass_creation(pid, uid, place, permit="2022-11-11 15:11"):
             uid, pid, place, permit))
         cn.commit()
     except Exception:
-        print("pass already exists")
+        pass
 
 
 def checkout(uid, checkout, pid=9999):
@@ -110,29 +111,30 @@ if __name__ == "__main__":
     # pass_creation(125, "21BCS2287",
     #               "Kharar", "2022-11-11 11:11:11")
 
-    checkout("21BCS2287", "2022-11-11 09:11:11", 125)
-    checkin("21BCS2287", "2022-11-11 10:11:11", 125)
+    # checkout("21BCS2287", "2022-11-11 09:11:11", 125)
+    # checkin("21BCS2287", "2022-11-11 10:11:11", 125)
 
-    pass_creation(2, "21BCS2287",
-                  "Kharar", "2022-11-11 15:11:11")
+    # pass_creation(2, "21BCS2287",
+    #               "Kharar", "2022-11-11 15:11:11")
 
-    checkout("21BCS2287", "2022-11-11 13:11:11", 2)
-    checkin("21BCS2287", "2022-11-11 14:11:11", 2)
+    # checkout("21BCS2287", "2022-11-11 13:11:11", 2)
+    # checkin("21BCS2287", "2022-11-11 14:11:11", 2)
 
-    pass_creation(3, "21BCS2287",
-                  "Kharar", "2022-03-11 11:11:11")
+    # pass_creation(3, "21BCS2287",
+    #               "Kharar", "2022-03-11 11:11:11")
 
-    checkout("21BCS2287", "2022-03-11 09:11:11", 3)
-    checkin("21BCS2287", "2022-03-11 10:11:11", 3)
+    # checkout("21BCS2287", "2022-03-11 09:11:11", 3)
+    # checkin("21BCS2287", "2022-03-11 10:11:11", 3)
 
-    pass_creation(4, "21BCS2287",
-                  "Kharar", "2022-03-21 11:11:11")
+    # pass_creation(4, "21BCS2287",
+    #               "Kharar", "2022-03-21 11:11:11")
 
-    checkout("21BCS2287", "2022-03-21 09:11:11", 4)
-    checkin("21BCS2287", "2022-03-21 10:11:11", 4)
+    # checkout("21BCS2287", "2022-03-21 09:11:11", 4)
+    # checkin("21BCS2287", "2022-03-21 10:11:11", 4)
 
-    pass_creation(5, "21BCS2287",
-                  "Kharar", "2022-03-22 11:11:11")
+    # pass_creation(5, "21BCS2287",
+    #               "Kharar", "2022-03-22 11:11:11")
 
-    checkout("21BCS2287", "2022-03-22 09:11:11", 5)
-    checkin("21BCS2287", "2022-03-22 10:11:11", 5)
+    # checkout("21BCS2287", "2022-03-22 09:11:11", 5)
+    # checkin("21BCS2287", "2022-03-22 10:11:11", 5)
+    StudentPersonalTable("20CBS1017")

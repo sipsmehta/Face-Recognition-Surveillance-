@@ -44,7 +44,11 @@ class Ui_GuardDialog(QDialog):
 
         if self.student_current_status != "Outside":
 
-            dsf.checkout(self.uid, now, 125)
+            try:
+
+                dsf.checkout(self.uid, now, 7905)
+            except Exception:
+                pass
 
             self.CheckoutTime.setText(
                 dt.datetime.strftime(now, "%I:%M %p"))
@@ -57,7 +61,7 @@ class Ui_GuardDialog(QDialog):
 
         elif self.student_current_status == "Outside":
 
-            dsf.checkin(self.uid, now, 125)
+            dsf.checkin(self.uid, now, 7905)
 
             self.CheckinTime.setText(
                 dt.datetime.strftime(now, "%I:%M %p"))
@@ -80,6 +84,7 @@ class Ui_GuardDialog(QDialog):
         self.Name.setText(self.name)
         self.Status.setText(self.status)
         self.Branch.setText(self.branch)
+        self.Pass.setText("Pass Alloted")
 
         if self.uid != "unknown":
             self.ProfileImage.setPixmap(
