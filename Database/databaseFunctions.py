@@ -1,5 +1,5 @@
 from jinja2 import StrictUndefined
-import mysql.connector as sq
+# import mysql.connector as sq
 # from datetime import datetime as dt
 from __init__ import *
 

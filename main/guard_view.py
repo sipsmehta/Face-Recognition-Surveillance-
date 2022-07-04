@@ -1,5 +1,5 @@
 from __init__ import *
-from Database import databaseFunctions as dsf
+# from Database import databaseFunctions as dsf
 
 
 class Ui_GuardDialog(QDialog):
@@ -46,14 +46,13 @@ class Ui_GuardDialog(QDialog):
 
             try:
 
-                dsf.checkout(self.uid, now, 7905)
+                # dsf.checkout(self.uid, now, 7905)
+                pass
             except Exception:
                 pass
 
-            self.CheckoutTime.setText(
-                dt.datetime.strftime(now, "%I:%M %p"))
-            self.CheckoutDate.setText(
-                dt.datetime.strftime(now, "%d/%m/%Y"))
+            self.CheckoutTime.setText(dt.datetime.strftime(now, "%I:%M %p"))
+            self.CheckoutDate.setText(dt.datetime.strftime(now, "%d/%m/%Y"))
 
             self.student_current_status = "Outside"
 
@@ -61,12 +60,10 @@ class Ui_GuardDialog(QDialog):
 
         elif self.student_current_status == "Outside":
 
-            dsf.checkin(self.uid, now, 7905)
+            # dsf.checkin(self.uid, now, 7905)
 
-            self.CheckinTime.setText(
-                dt.datetime.strftime(now, "%I:%M %p"))
-            self.CheckinDate.setText(
-                dt.datetime.strftime(now, "%d/%m/%Y"))
+            self.CheckinTime.setText(dt.datetime.strftime(now, "%I:%M %p"))
+            self.CheckinDate.setText(dt.datetime.strftime(now, "%d/%m/%Y"))
 
             self.student_current_status = "Inside"
 
@@ -75,8 +72,9 @@ class Ui_GuardDialog(QDialog):
     def show_detected_face_data(self):
 
         try:
-            (self.name, self.status, self.branch,
-                *self.check_details) = dsf.getdetails(self.uid)
+            # (self.name, self.status, self.branch,
+            #  *self.check_details) = dsf.getdetails(self.uid)
+            pass
         except Exception:
             print("face not in dataset")
 
@@ -90,8 +88,7 @@ class Ui_GuardDialog(QDialog):
             self.ProfileImage.setPixmap(
                 QPixmap(f"TrainingData/{self.uid}.jpg"))
         else:
-            self.ProfileImage.setPixmap(
-                QPixmap("resources/unknown.jpeg"))
+            self.ProfileImage.setPixmap(QPixmap("resources/unknown.jpeg"))
             self.Status.setText('unknown')
 
         self.ProfileImage.setScaledContents(True)
@@ -102,10 +99,11 @@ class Ui_GuardDialog(QDialog):
         encodes_cur_frame = face_recognition.face_encodings(
             frame, faces_cur_frame)
         for encodeFace, faceLoc in zip(encodes_cur_frame, faces_cur_frame):
-            match = face_recognition.compare_faces(
-                encode_list_known, encodeFace, tolerance=0.50)
-            face_dis = face_recognition.face_distance(
-                encode_list_known, encodeFace)
+            match = face_recognition.compare_faces(encode_list_known,
+                                                   encodeFace,
+                                                   tolerance=0.50)
+            face_dis = face_recognition.face_distance(encode_list_known,
+                                                      encodeFace)
             self.uid = "unknown"
             best_match_index = np.argmin(face_dis)
             # print("s",best_match_index)
@@ -144,8 +142,8 @@ class Ui_GuardDialog(QDialog):
                 qformat = QImage.Format_RGBA8888
             else:
                 qformat = QImage.Format_RGB888
-        outImage = QImage(
-            image, image.shape[1], image.shape[0], image.strides[0], qformat)
+        outImage = QImage(image, image.shape[1], image.shape[0],
+                          image.strides[0], qformat)
         outImage = outImage.rgbSwapped()
 
         self.LiveFeed.setPixmap(QPixmap.fromImage(outImage))
@@ -156,5 +154,5 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     new_window = Ui_GuardDialog()
     new_window.show()
-    new_window.startVideo("1")
+    new_window.startVideo("0")
     sys.exit(app.exec_())

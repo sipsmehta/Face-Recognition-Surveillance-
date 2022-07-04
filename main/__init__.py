@@ -17,7 +17,7 @@ import os
 # from qt_material import apply_stylesheet
 import pickle
 
-import mysql.connector as sq
+# import mysql.connector as sq
 
 format = '%Y-%m-%d %H:%M'
 
@@ -28,14 +28,14 @@ warden_ui = "ui/warden_view.ui"
 
 camera = "1"
 
-cn = sq.connect(username="admin",
-                password="sih",
-                host="localhost",
-                database='sih_main')
-# cn = sq.connect(username="root", password="SIH",
-#                 host="localhost", database='sih')
-if cn.is_connected() == False:
-    print("not connected")
-else:
-    print("Connection successful")
-mc = cn.cursor()
+# cn = sq.connect(username="admin",
+#                 password="sih",
+#                 host="localhost",
+#                 database='sih_main')
+# # cn = sq.connect(username="root", password="SIH",
+# #                 host="localhost", database='sih')
+# if cn.is_connected() == False:
+#     print("not connected")
+# else:
+#     print("Connection successful")
+# mc = cn.cursor()
